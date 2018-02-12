@@ -1,0 +1,39 @@
+{
+  "name": "blap",
+  "version": "1.0.0",
+  "description": "A simple blog web app using nodejs, express.js and mongoose.js. This is just to practice coding, not going to make it a thing..",
+  "main": "server.js",
+  "scripts": {
+    "test": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/djorborn/blap.git"
+  },
+  "keywords": [
+    "blap",
+    "blogapp",
+    "web",
+    "app",
+    "javascript",
+    "nodejs",
+    "mongoosejs",
+    "expressjs",
+    "css",
+    "login",
+    "accounts"
+  ],
+  "author": "djorborn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/djorborn/blap/issues"
+  },
+  "homepage": "https://github.com/djorborn/blap#readme",
+  "dependencies": {
+    "cookie-parser": "^1.4.3",
+    "dotenv": "^5.0.0",
+    "express": "^4.16.2",
+    "mongoose": "^5.0.4",
+    "pug": "^2.0.0-rc.4"
+  }
+}
