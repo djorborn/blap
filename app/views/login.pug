@@ -3,18 +3,22 @@ block login
 
   .section
     .container
-      .box(style="width: 320px;margin: auto;")
+      .box(style="width: 320px;margin: auto;" id="login")
         .subtitle Login
         .field
           .label Username
           .control
-            input.input(type="text" placeholder="Username" name="username")
+            input.input(type="text" placeholder="Username" v-model="username")
         .field
           .label Password
           .control
-            input.input(typ="password" placeholder="Password" name="password")
+            input.input(typ="password" placeholder="Password" v-model="password")
         .field.is-grouped
           .control
             a.button(href="/register") Register
-              .control
-                button.button.is-primary(type="submit") Login
+          .control
+            button.button.is-primary(type="submit" @click="submit") Login
+
+        .notification.is-warning(v-if="error") {{error}}
+        
+  script(src="js/login.client.js")
