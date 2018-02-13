@@ -3,15 +3,12 @@ var Schema = mongoose.Schema
 
 var blogSchema = new Schema({
   title: String,
-  author: String,
+  author: {type: Schema.Types.ObjectId, ref: 'User'},
   body: String,
-  comments: [{ body: String, date: Date }],
+  comments: [{type: Schema.Types.ObjectId, ref: 'Comment'}],
   date: { type: Date, default: Date.now },
   hidden: Boolean,
-  meta: {
-    votes: Number,
-    favs: Number
-  }
+  fans: [{type: Schema.Types.ObjectId, ref: 'Person'}]
 })
 
 var Blog = mongoose.model('Blog', blogSchema)
