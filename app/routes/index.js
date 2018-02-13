@@ -1,7 +1,16 @@
-const index = require('express').Router();
+const index = require('express').Router()
+const User = require('../modules/User')
 
-index.get('/', (req, res)=>{
-    res.send("Hello");
-});
+index.get('/', checkAuth)
 
-module.exports = index;
+index.get('/', (req, res) => {
+  res.render('login', {
+    title: 'Login'
+  })
+})
+
+module.exports = index
+
+function checkAuth (req, res, next) {
+
+}

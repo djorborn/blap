@@ -1,0 +1,20 @@
+extends outside
+block login
+
+  .section
+    .container
+      .box(style="width: 320px;margin: auto;")
+        .subtitle Login
+        .field
+          .label Username
+          .control
+            input.input(type="text" placeholder="Username" name="username")
+        .field
+          .label Password
+          .control
+            input.input(typ="password" placeholder="Password" name="password")
+        .field.is-grouped
+          .control
+            a.button(href="/register") Register
+              .control
+                button.button.is-primary(type="submit") Login
