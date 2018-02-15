@@ -1,22 +1,23 @@
-var vm = new Vue({
-  el: '#login',
+var Vue, ajax
+var vmLogin = new Vue({
   data: {
-    username: '',
-    password: '',
+    username: 'dee',
+    password: 'e',
     error: ''
   },
   methods: {
     submit: function () {
-      this.checkCred({
+      ajax('/test', 'POST', {
         username: this.username,
         password: this.password
+      }, function (res) {
+        vmLogin.error = res
       })
-    },
-    checkCred: function (cred) {
-      axios.post('/login')
-        .then(function (res) {
-          console.log(res)
-        })
     }
+  },
+  created: function () {
+    console.log('created')
   }
 })
+
+vmLogin.$mount('#login')
