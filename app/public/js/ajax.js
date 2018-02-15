@@ -4,13 +4,24 @@
 var XMLHttpRequest
 
 function ajax (url, type, data, callback) {
+  // URL
   this.url = url
+
+  // Request Type
   this.type = type
-  this.data = data
+
+  // Choose Content Type
+  if (typeof data === 'object') {
+    this.contentType = 'application/json'
+    this.data = JSON.stringify(data)
+  } else {
+    this.contentType = 'application/x-www-form-urlencoded; charset=UTF-8'
+    this.data = data
+  }
 
   this.xhr = new XMLHttpRequest()
   this.xhr.open('POST', this.url, true)
-  this.xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
+  this.xhr.setRequestHeader('Content-Type', this.contentType)
 
   this.xhr.onreadystatechange = function () {
     if (this.readyState === 4) {
@@ -21,14 +32,12 @@ function ajax (url, type, data, callback) {
   this.xhr.send(this.data)
 }
 
-
 ajax('/test', 'POST', {
   username: 'Daniel',
   password: 'password'
 }, function (res) {
   console.log(res)
 })
-
 
 /* Example
 ajax('/test', 'POST', {
