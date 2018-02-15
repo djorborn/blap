@@ -4,7 +4,8 @@
   "description": "A simple blog web app using nodejs, express.js and mongoose.js. This is just to practice coding, not going to make it a thing..",
   "main": "server.js",
   "scripts": {
-    "test": "nodemon server.js"
+    "test": "nodemon server.js",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
