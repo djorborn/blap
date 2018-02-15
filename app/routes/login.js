@@ -6,12 +6,7 @@ login.get('/', (req, res, next) => {
   res.render('login')
 })
 
-login.post('/', async (req, res) => {
-  var p = await req.formdata.getData([])
-  console.log(p)
-  console.log(req.body)
-  res.sendStatus(200)
-})
+login.post(userLogin)
 
 module.exports = login
 
